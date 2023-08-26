@@ -6,15 +6,63 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="icon" href="img/favicon.ico" type="image/x-icon"> -->
-  <link rel="stylesheet" href="./css/style.min.css?_v=20230826002746">
-  <script src="./js/app.min.js?_v=20230826002746" defer></script>
+  <link rel="stylesheet" href="./css/style.min.css?_v=20230826202834">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css?_v=20230826202834" />
+  <script src="./js/app.min.js?_v=20230826202834" defer></script>
   <title>Glaz AI</title>
 </head>
 
 <body>
 	<div class="container">		
+
+		<div class="mobile-menu">
+	<div class="wrapper">
+		<div class="mobile-menu__cnt">
+			<div class="mobile-menu__header">									
+					<img src="img/glaz-ai-logo.svg" class="logo" alt="">
+					<button class="mobile-menu__close close-btn menu-toggler"></button>									
+			</div>
+			<div class="mobile-menu__content">
+				
+				<nav class="main-menu main-menu_mobile">
+	<ul class="main-menu__list">
+		<li class="main-menu__item">
+			<a class="main-menu__link" href="#about">О технологии</a>
+		</li>
+		<li class="main-menu__item">
+			<a class="main-menu__link" href="#possibilities">Возможности</a>
+		</li>
+		<li class="main-menu__item">
+			<a class="main-menu__link" href="#glazView">Glaz View</a>
+		</li>
+		<li class="main-menu__item">
+			<a class="main-menu__link" href="#howItWorks">Порядок работы</a>
+		</li>
+	</ul>
+</nav>
+							
+			</div>
+		</div>
+	</div>	
+	<a class="mobile-menu__btn btn" href="#sendRequest">Получить демо-версию</a>	
+</div>
+		<div class="success-message popup">
+	<div class="success-message__cnt">
+		<button class="success-message__close close-btn popup-close"></button>
+		<img class="success-message__icon" src="img/success-icon.svg" alt="">
+		<h2 class="success-message__title">
+			Ваша заявка<br>отправлена
+		</h2>
+		<span class="success-message__desc">
+			Мы свяжемся с вами<br>в ближайшее время!
+		</span>
+		<button class="success-message__btn btn popup-close">Хорошо</button>
+	</div>
+
+	<div class="success-message__bg popup-close"></div>
+</div>
 		
-		<header class="header">
+		<header class="header" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
 			<div class="wrapper">
 				<div class="header__cnt">					
 					<img class="logo" src="img/glaz-ai-logo.svg" alt="Glaz AI logo">
@@ -22,28 +70,28 @@
 					<nav class="main-menu main-menu_header">
 	<ul class="main-menu__list">
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">О технологии</a>
+			<a class="main-menu__link" href="#about">О технологии</a>
 		</li>
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">Возможности</a>
+			<a class="main-menu__link" href="#possibilities">Возможности</a>
 		</li>
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">Glaz View</a>
+			<a class="main-menu__link" href="#glazView">Glaz View</a>
 		</li>
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">Порядок работы</a>
+			<a class="main-menu__link" href="#howItWorks">Порядок работы</a>
 		</li>
 	</ul>
 </nav>
 
-					<button class="mobile-menu-btn">
+					<button class="mobile-menu-btn menu-toggler">
 						<img src="img/mobile-menu-btn.svg" alt="Mobile menu button">
 					</button>
 				</div>
 			</div>
 		</header>
 
-		<section class="hero">
+		<section class="hero" data-aos="fade" data-aos-duration="1500">
 			<div class="wrapper">
 				<div class="hero__cnt">
 					<div class="hero__content">
@@ -53,7 +101,7 @@
 						<p class="hero__subtitle">
 							Увеличим доходы и&nbsp;привлечем новую аудиторию в&nbsp;индустрии единоборств с&nbsp;помощью технологий анализа искусственного интеллекта
 						</p>
-						<a class="hero__cta btn btn_medium" href="">
+						<a class="hero__cta btn btn_medium" href="#sendRequest">
 							Получить демо-версию
 						</a>
 					</div>
@@ -66,7 +114,7 @@
 			</div>
 		</section>
 
-		<section class="about">
+		<section class="about" id="about" data-aos="fade" data-aos-duration="1500">
 			<div class="wrapper">
 				<div class="about__cnt">
 					<h2 class="about__title section-title">Рассказываем<br>о&nbsp;нашей технологии</h2>
@@ -90,7 +138,7 @@
 			</div>
 		</section>
 
-		<section class="possibilities">
+		<section class="possibilities" id="possibilities" data-aos="fade" data-aos-duration="1500">
 			<div class="wrapper">
 				<div class="possibilities__cnt">
 					<h2 class="possibilities__title section-title">
@@ -133,7 +181,7 @@
 			</div>
 		</section>
 
-		<section class="glaz-view">
+		<section class="glaz-view" id="glazView" data-aos="fade" data-aos-duration="1500">
 			<div class="wrapper">
 				<div class="glaz-view__cnt">
 					<img class="corner corner_tl" src="img/corner.svg" alt="">
@@ -161,15 +209,26 @@
 						</div>
 					</div>
 
-					<img class="glaz-view__scheme glaz-view__image" src="img/glaz-view-scheme.svg" alt="">
-					<div class="glaz-view__strike glaz-view__image">
+					<img
+						class="glaz-view__scheme glaz-view__image"
+						src="img/glaz-view-scheme.svg" alt=""
+						data-aos="zoom-out"
+						data-aos-duration="800"
+						data-aos-delay="200"
+					>
+					<div
+						class="glaz-view__strike glaz-view__image"
+						data-aos="fade-up"
+						data-aos-duration="800"
+						data-aos-delay="400"
+					>
 						<img src="img/glaz-view-strike.svg" alt="">
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="features">
+		<section class="features" data-aos="fade" data-aos-duration="1500">
 			<img class="features__bg-glow" src="img/features-bg-glow.png" alt="">
 			
 			<div class="wrapper">
@@ -192,7 +251,7 @@
 								<span>
 									Никаких дополнительных затрат с&nbsp;вашей стороны. Мы интегрируемся к&nbsp;вашей текущей технической спецификации и&nbsp;конфигурации.
 								</span>
-								<a class="features__item-link arrowed-link" href="">Получить демо-версию</a>
+								<a class="features__item-link arrowed-link" href="#sendRequest">Получить демо-версию</a>
 							</div>
 						</div>						
 					</div>
@@ -214,7 +273,7 @@
 								<span>
 									Вне зависимости от&nbsp;вашего местоположения, мы обеспечим лучшую скорость при извлечении всех данных.
 								</span>
-								<a class="features__item-link arrowed-link" href="">Получить демо-версию</a>
+								<a class="features__item-link arrowed-link" href="#sendRequest">Получить демо-версию</a>
 							</div>
 						</div>						
 					</div>
@@ -222,14 +281,14 @@
 			</div>
 		</section>
 
-		<section class="implementation">
+		<section class="implementation" data-aos="fade" data-aos-duration="1500">
 			<div class="wrapper">
 				<div class="implementation__cnt">
 					<h2 class="implementation__title section-title">
 						В результате внедрения<br>GLAZ AI вы сможете:
 					</h2>
 					<div class="implementation__cards">
-						<div class="implementation__card">
+						<div class="implementation__card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
 							<img class="corner corner_tl" src="img/corner.svg" alt="">
 							<img class="corner corner_tr" src="img/corner.svg" alt="">
 							<img class="corner corner_bl" src="img/corner.svg" alt="">
@@ -244,7 +303,7 @@
 							</span>
 						</div>
 
-						<div class="implementation__card">
+						<div class="implementation__card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
 							<img class="corner corner_tl" src="img/corner.svg" alt="">
 							<img class="corner corner_tr" src="img/corner.svg" alt="">
 							<img class="corner corner_bl" src="img/corner.svg" alt="">
@@ -259,7 +318,7 @@
 							</span>
 						</div>
 
-						<div class="implementation__card">
+						<div class="implementation__card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="700">
 							<img class="corner corner_tl" src="img/corner.svg" alt="">
 							<img class="corner corner_tr" src="img/corner.svg" alt="">
 							<img class="corner corner_bl" src="img/corner.svg" alt="">
@@ -275,12 +334,12 @@
 						</div>						
 					</div>
 
-					<a class="implementation__btn btn btn_primary" href="">Получить демо-версию</a>
+					<a class="implementation__btn btn btn_primary" href="#sendRequest">Получить демо-версию</a>
 				</div>
 			</div>
 		</section>
 
-		<section class="how-it-works">
+		<section class="how-it-works" id="howItWorks" data-aos="fade" data-aos-duration="1500">
 			<div class="wrapper">
 				<div class="how-it-works__cnt">
 					<h2 class="how-it-works__title section-title">Как строится работа</h2>
@@ -293,7 +352,7 @@
 									<span class="how-it-works__slide-desc">
 										Уточнение технических аспектов<br>Вашей видео-конфигурации
 									</span>
-									<a class="how-it-works__btn btn btn_primary" href="">Связаться с нами</a>
+									<a class="how-it-works__btn btn btn_primary" href="#sendRequest">Связаться с нами</a>
 								</div>
 								
 								<div class="how-it-works__slide swiper-slide">
@@ -302,7 +361,7 @@
 									<span class="how-it-works__slide-desc">
 										Первоначальная настройка<br>технического взаимодействия
 									</span>
-									<a class="how-it-works__btn btn btn_primary" href="">Связаться с нами</a>
+									<a class="how-it-works__btn btn btn_primary" href="#sendRequest">Связаться с нами</a>
 								</div>
 								
 								<div class="how-it-works__slide swiper-slide">
@@ -311,7 +370,7 @@
 									<span class="how-it-works__slide-desc">
 										Тест в&nbsp;день мероприятия
 									</span>
-									<a class="how-it-works__btn btn btn_primary" href="">Связаться с нами</a>
+									<a class="how-it-works__btn btn btn_primary" href="#sendRequest">Связаться с нами</a>
 								</div>
 								
 								<div class="how-it-works__slide swiper-slide">
@@ -320,7 +379,7 @@
 									<span class="how-it-works__slide-desc">
 										Извлечение и&nbsp;сортировка данных мероприятия
 									</span>
-									<a class="how-it-works__btn btn btn_primary" href="">Связаться с нами</a>
+									<a class="how-it-works__btn btn btn_primary" href="#sendRequest">Связаться с нами</a>
 								</div>
 								
 								<div class="how-it-works__slide swiper-slide">
@@ -329,7 +388,7 @@
 									<span class="how-it-works__slide-desc">
 										Предоставляем извлеченные данные<br>и обсуждаем возможные персонализированные улучшения
 									</span>
-									<a class="how-it-works__btn btn btn_primary" href="">Связаться с нами</a>
+									<a class="how-it-works__btn btn btn_primary" href="#sendRequest">Связаться с нами</a>
 								</div>
 							</div>
 						</div>
@@ -362,7 +421,7 @@
 			</div>
 		</section>
 
-		<section class="form-section">
+		<section class="form-section" id="sendRequest">
 			<!-- <img class="form-section__glow" src="img/form-glow.png" alt=""> -->
 
 			<div class="form-section__wrapper wrapper">
@@ -396,16 +455,16 @@
 				<nav class="main-menu main-menu_footer">
 	<ul class="main-menu__list">
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">О технологии</a>
+			<a class="main-menu__link" href="#about">О технологии</a>
 		</li>
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">Возможности</a>
+			<a class="main-menu__link" href="#possibilities">Возможности</a>
 		</li>
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">Glaz View</a>
+			<a class="main-menu__link" href="#glazView">Glaz View</a>
 		</li>
 		<li class="main-menu__item">
-			<a class="main-menu__link" href="">Порядок работы</a>
+			<a class="main-menu__link" href="#howItWorks">Порядок работы</a>
 		</li>
 	</ul>
 </nav>
@@ -414,7 +473,7 @@
 				<span>
 					Компания, специализирующаяся на&nbsp;спортивных данных и&nbsp;технологиях, помогающая спортивным лигам выйти на&nbsp;новый уровень увлеченности и&nbsp;увеличить доходы с&nbsp;помощью технологии искусственного интелекта.
 				</span>
-				<a class="btn" href="">Связаться с нами</a>
+				<a class="btn" href="#sendRequest">Связаться с нами</a>
 			</div>	
 		</div>
 	</div>
