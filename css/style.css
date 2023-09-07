@@ -1083,6 +1083,10 @@ template {
   max-width: 1920px;
 }
 
+.footer.yebanko {
+  padding-bottom: 100vh;
+}
+
 .footer__menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1483,17 +1487,21 @@ template {
   display: flex;
   gap: 60px;
   width: 100%;
+  position: relative;
 }
 
 .how-it-works__slider .main-slider {
+  position: sticky;
+  top: 60px;
   width: 40%;
+  height: 70vh;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
   padding: 40px 0 0;
 }
 
-.how-it-works__tabs {
+.how-it-works__tabs-cnt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1505,6 +1513,20 @@ template {
       -ms-flex: auto;
           flex: auto;
   width: 60%;
+  position: relative;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  height: 130vh;
+}
+
+.how-it-works__tabs {
+  width: 100%;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  position: sticky;
+  top: 100px;
 }
 
 .how-it-works__tab {
@@ -2063,6 +2085,21 @@ fieldset {
   }
 }
 
+@media (min-width: 1921px) {
+  .how-it-works__slider .main-slider {
+    height: 40vh;
+    top: 200px;
+  }
+
+  .how-it-works__tabs-cnt {
+    height: 90vh;
+  }
+
+  .how-it-works__tabs {
+    top: 200px;
+  }
+}
+
 @media (max-width: 1440px) {
   .features {
     padding: 8.2vw 0 9vw;
@@ -2407,11 +2444,20 @@ fieldset {
 
   .how-it-works__slider .main-slider {
     width: 100%;
+    position: static;
+    top: auto;
+    height: auto;
+  }
+
+  .how-it-works__tabs-cnt {
+    height: auto;
+    width: 100%;
   }
 
   .how-it-works__tabs {
     position: relative;
     left: -20px;
+    top: auto;
     width: calc(100% + 40px);
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
